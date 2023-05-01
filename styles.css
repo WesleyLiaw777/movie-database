@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ELEMENTS */
+
+img{
+    width: 100%;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    font-weight: 600;
+}
+
+input{
+    padding: 4px 0;
+    border: 2px solid grey;
+    border-right: none;
+    transition: all 200ms;
+}
+
+input:focus{
+    outline: none;
+}
+
+input:hover,
+button:hover{
+    border-color:rgb(123, 164, 40);
+}
+
+button{
+    padding: 4px;
+    border: 2px solid grey;
+    transition: all 200ms;
+}
+
+/* GEN CLASSES */
+
+.row{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* NAV */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100px;
+    padding: 0 20px;
+}
+
+.nav__logo--container{
+    display: flex;
+    align-items: center;
+}
+
+.nav__logo--figure{
+    width: 50px;
+    height: 50px;
+}
+
+.nav__logo--name{
+    margin-left: 20px;
+}
+
+.nav__link--list{
+    display: flex;
+}
+
+.nav__link{
+    padding: 12px;
+}
+
+.contact__button{
+    padding: 0 12px;
+}
+
+.menu__btn--open{
+    display: none;
+}
+
+.menu__close--btn{
+    position: absolute;
+    right: 4px;
+    top: 20px;
+}
+
+.menu__backdrop{
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    left: 16px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    z-index: 100;
+    border-radius: 8px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: all 250ms ease-in-out;
+    animation: bounce-in backwards;
+    animation-duration: 200ms;
+    animation-timing-function: ease-out;
+}
+
+@keyframes bounce-in{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    50%{
+        transform: translateX(-100px);
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.menu--open .menu__backdrop{
+    display: flex;
+}
+
+/* START SEARCH */
+
+#start_search{
+    text-align: center;
+}
+
+.slogan{
+    margin-bottom: 20px;
+}
+
+#user-input{
+    outline: none;
+    border: none;
+}
+
+#zoomer-glass{
+    position: absolute;
+}
+
+/* SORTED SEARCH */
+
+#heading{
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+
+.sort__search{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.sort__search--container{
+}
+
+.movie__title{
+    margin-top: 80px;
+    width: 70%;
+    margin-bottom: 4px;
+}
+
+/* MOVIE DISPLAY */
+
+#movie-display{
+    margin-top: 200px;
+}
+
+#movie-display--sorted{
+    margin-top: 60px;
+}
+
+.display__heading{
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.movie-list{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.movie{
+    width: calc(100% / 3);
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.movie__poster--wrapper{
+    width: 200px;
+    height: 300px;
+    margin-bottom: 8px;
+}
+
+.movie__poster{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 12px 30px 0 rgb(0,0,0,0.28);
+}
+
+.movie__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* LOADING */
+
+.movies__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    font-size: 60px;
+  }
+
+.fa-spinner{
+    animation: rotate 1200ms infinite ease;
+    display: black !important;
+}
+
+.movies__loading .movies__loading--spinner{
+    display: block !important;
+}
+
+/* RESPONSIVENESS */
+
+@keyframes rotate {
+    0% {
+      transform:(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media(max-width: 800px){
+    .movie{
+        width: 50%;
+    }
+  }
+
+  @media(max-width: 525px){
+    .row{
+        padding: 0 12px;
+    }
+    .nav__link, .contact__button{
+        display: none;
+    }
+    .movie{
+        width: 100%;
+    }
+    .menu__btn--open{
+        display: flex;
+    }
+  }

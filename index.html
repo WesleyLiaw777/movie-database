@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="index.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/80f09bcac6.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <section id="heading">
+        <h1 class="title">Search for a movie here!</h1>
+        <div class="sort__search">
+            <div class="sort__search--container">
+                <input type="text" id="userInput" placeholder="Type your keyword here.." onkeypress="searchKeyword(event)">
+                <button id="zoomer-glass" onclick="searchButton('userInput')">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="movie-display">
+        <div class="container">
+            <div class="row">
+                <div class="movie-list">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
