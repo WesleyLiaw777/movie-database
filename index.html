@@ -13,7 +13,39 @@
     ></script>
 </head>
 <body>
+    
     <section id="heading">
+        <nav>
+            <div class="nav__logo--container">
+                <figure class="nav__logo--figure">
+                    <img src="./assets/compass.png" alt="" class="logo__img click" onclick="goHome()">
+                </figure>
+                <h4 class="nav__logo--name click" onclick="goHome()">Movie Finder</h4>
+            </div>
+
+            <ul class="nav__link--list">
+                <li><a href="./index.html" class="nav__link link__hover-effect">Home</a></li>
+                <li><a href="./search.html" class="nav__link link__hover-effect">Find a movie!</a></li>
+                <li><a href="#" class="nav__link link__hover-effect">Contact</a></li>
+            </ul>
+
+            <button class="menu__btn menu__btn--open" onclick="openMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <div class="menu__backdrop">
+            <button class="menu__btn menu__close--btn" onclick="closeMenu()">
+                <i class="fa fa-times"></i>
+            </button>
+
+            <div class="menu__links">
+                <a class="menu__link" href="./index.html">Home</a>
+                <a class="menu__link" href="./search.html">Find a movie!</a>
+                <a class="menu__link" href="">Contact</a>
+            </div>
+        </div>
+
         <h1 class="title">Search for a movie here!</h1>
         <div class="sort__search">
             <div class="sort__search--container">
@@ -27,7 +59,62 @@
     <section id="movie-display">
         <div class="container">
             <div class="row">
+                <h1 class="display__heading">Here's our favorite recommendations:</h1>
                 <div class="movie-list">
+                    <div class="movie">
+                        <figure class="movie__poster--wrapper">
+                            <img class="movie__poster" src="https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg" alt="">
+                        </figure>
+                        <div class="movie__info">
+                        <h4 class="movie__title">The Matrix</h4>
+                        <h5>1999</h5>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <figure class="movie__poster--wrapper">
+                            <img class="movie__poster" src="https://m.media-amazon.com/images/M/MV5BOTI0MzcxMTYtZDVkMy00NjY1LTgyMTYtZmUxN2M3NmQ2NWJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" alt="">
+                        </figure>
+                        <div class="movie__info">
+                        <h4 class="movie__title">Good Will Hunting</h4>
+                        <h5>1997</h5>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <figure class="movie__poster--wrapper">
+                            <img class="movie__poster" src="https://m.media-amazon.com/images/M/MV5BMDExZGMyOTMtMDgyYi00NGIwLWJhMTEtOTdkZGFjNmZiMTEwXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SX300.jpg" alt="">
+                        </figure>
+                        <div class="movie__info">
+                        <h4 class="movie__title">John Wick: Chapter 4</h4>
+                        <h5>2023</h5>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <figure class="movie__poster--wrapper">
+                            <img class="movie__poster" src="https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_SX300.jpg" alt="">
+                        </figure>
+                        <div class="movie__info">
+                        <h4 class="movie__title">Spider-Man: Into the Spider-Verse</h4>
+                        <h5>2018</h5>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <figure class="movie__poster--wrapper">
+                            <img class="movie__poster" src="https://m.media-amazon.com/images/M/MV5BNjE5NzA4ZDctOTJkZi00NzM0LTkwOTYtMDI4MmNkMzIxODhkXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_SX300.jpg" alt="">
+                        </figure>
+                        <div class="movie__info">
+                        <h4 class="movie__title">Encanto</h4>
+                        <h5>2021</h5>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <figure class="movie__poster--wrapper">
+                            <img class="movie__poster" src="https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@._V1_SX300.jpg" alt="">
+                        </figure>
+                        <div class="movie__info">
+                        <h4 class="movie__title">Get Out</h4>
+                        <h5>2017</h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
