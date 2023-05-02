@@ -7,7 +7,7 @@ let keyword = localStorage.getItem("keyword");
 
 const movieList = document.querySelector(`.movie-list`)
 
-if (keyword !== '') {
+if (keyword !== '' && keyword !== null) {
     fetchMovies(keyword);
 }
 
