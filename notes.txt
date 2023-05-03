@@ -1,0 +1,5 @@
+style search bar, menu icon
+was unable to replicate his search error..
+ will keep an eye out
+recommended to put api key, url, and 
+ # results in variables for readability.

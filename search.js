@@ -1,13 +1,18 @@
 // https://www.omdbapi.com/?apikey=e4584088&s=matrix
 
+const API_KEY = `e4584088`;
+const URL = `https://www.omdbapi.com/?apikey=${API_KEY}&s=`;
+const MAX_RESULTS = 6;
+
 let movies;
 let spinnerSwitch = false;
 let toggleHTML = `<i id="spinner" class="fas fa-spinner movies__loading--spinner"></i>`
-let keyword = localStorage.getItem("keyword");
 
 const movieList = document.querySelector(`.movie-list`)
 
-if (keyword !== '' && keyword !== null) {
+let keyword = localStorage.getItem("keyword") || "";
+// keyword !== '' && keyword !== null
+if (keyword) {
     fetchMovies(keyword);
 }
 
@@ -16,9 +21,10 @@ async function fetchMovies(keyword){
     document.querySelector(`.display__heading`).style.display = 'none';
     toggleSpinner();
     
-    const movies = await fetch(`https://www.omdbapi.com/?apikey=e4584088&s=${keyword}`)
+    // const movies = await fetch(`https://www.omdbapi.com/?apikey=e4584088&s=${keyword}`)
+    const movies = await fetch(URL + keyword);
     const moviesData = await movies.json();
-    const firstSix = moviesData.Search.slice(0,6);
+    const firstSix = moviesData.Search.slice(0, MAX_RESULTS);
     
     const moviesHTML = firstSix.map(movie => {
         return `
@@ -34,7 +40,7 @@ async function fetchMovies(keyword){
     }).join('');
 
     setTimeout(() => {
-        // movieList.classList.remove('movies__loading');
+        movieList.classList.remove('movies__loading');
         toggleSpinner();
         movieList.innerHTML = moviesHTML;
         localStorage.clear();
